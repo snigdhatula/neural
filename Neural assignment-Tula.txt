@@ -1,0 +1,56 @@
+Question 1
+i)
+
+Fn= input("enter your first name \n")
+Ln= input("enter your last name \n")
+def Full_name(fn,ln):
+    Full_name= fn+ " " +ln
+    return Full_name
+print ("Full_name is " + Full_name(Fn,Ln))
+
+ii)
+
+def string_alt(str):
+    print(str[0:len(str):2])
+string_alt(input("enter any name "))
+
+Question 2:
+
+ip_f = open(r"C:\Users\snigd\Desktop\Snig\input.txt", "r")
+op_f = open(r"C:\Users\snigd\Desktop\Snig\output.txt", "w")
+
+content = {}
+
+
+for line in ip_f:
+    op_f.write(line)
+    new_lines = line.split()
+    for x in new_lines:
+        if(content.get(x)==None):
+            content[x]=1
+        else:
+            content[x] = content[x] + 1
+            
+op_f.write("\n Word_Count : \n")
+for key, value in content.items(): 
+        op_f.write('%s:%s\n' % (key, value))
+ip_f.close()
+op_f.close()
+
+Question 3:
+
+
+data = input("enter the customer height : ")
+
+def inchToCent(value):
+    return value*2.54
+
+height = data.split()
+
+list = []
+
+for x in height: #using interactive loop
+    value = int(x)
+    list.append(inchToCent(value))#to convert into centimeter
+    
+print("converted height in inches: ",list)
